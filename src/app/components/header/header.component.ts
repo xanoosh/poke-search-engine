@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string = 'placeholder title';
-
+  @Input() pxSize: string = '20px';
   constructor() {}
 
   ngOnInit(): void {}
