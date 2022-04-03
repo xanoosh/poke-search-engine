@@ -1,4 +1,4 @@
-<form class="searchbar">
-  <app-textinput></app-textinput>
-  <app-button></app-button>
-</form>
+<div class="searchbar">
+  <app-textinput (inputChange)="searchBarChange()"></app-textinput>
+  <app-button (btnClick)="searchBarClick()"></app-button>
+</div>
