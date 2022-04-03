@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-textinput',
@@ -7,12 +7,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class TextinputComponent implements OnInit {
   placeholder: string = 'Search by name or id';
-  @Output() inputChange = new EventEmitter();
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  onChange() {
-    this.inputChange.emit();
+  onChange(val: string) {
+    console.log(val);
   }
 }

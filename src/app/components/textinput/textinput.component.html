@@ -1,1 +1,6 @@
-<input type="text" (input)="onChange()" placeholder="{{ placeholder }}" />
+<input
+  type="text"
+  #input
+  (input)="onChange(input.value)"
+  placeholder="{{ placeholder }}"
+/>

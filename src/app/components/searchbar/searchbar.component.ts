@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchbar.component.scss'],
 })
 export class SearchbarComponent implements OnInit {
-  searchBarChange: () => void = () => console.log('change');
+  searchBarChange: (val: any) => void = (val) => console.log(val);
   searchBarClick: () => void = () => console.log('clicked');
 
   constructor() {}
