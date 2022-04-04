@@ -5,7 +5,7 @@ import { SecondpageComponent } from './components/secondpage/secondpage.componen
 
 const routes: Routes = [
   { path: '', component: SearchbarComponent },
-  { path: '', component: SecondpageComponent },
+  { path: 'secondpage', component: SecondpageComponent },
 ];
 
 @NgModule({
