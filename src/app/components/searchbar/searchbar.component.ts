@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { retry, catchError } from 'rxjs/operators';
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
@@ -14,11 +15,8 @@ export class SearchbarComponent implements OnInit {
   searchBarClick: () => void = () => console.log('clicked');
   data: any;
   constructor(private http: HttpClient) {}
-  getPokemonData() {
-    this.data = this.http.get(
-      `https://pokeapi.co/api/v2/pokemon/${this.searchBarValue}`
-    );
-    console.log(this.data);
+  getApiData() {
+    this.data = this.http.get(`https://pokeapi.co/api/v2/pokemon/1`);
   }
   ngOnInit(): void {}
 }
