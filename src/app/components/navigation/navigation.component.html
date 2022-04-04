@@ -1,10 +1,8 @@
-<nav>
-  <ul>
-    <li><a href="#" routerLink="/" routerLinkActive="active">Home</a></li>
-    <li>
-      <a href="#" routerLink="/secondpage" routerLinkActive="active"
-        >otherpage</a
-      >
-    </li>
-  </ul>
-</nav>
+<ul ngbNav #nav="ngbNav" class="nav">
+  <li ngbNavItem>
+    <a routerLink="/" routerLinkActive="active" ngbNavLink>First</a>
+  </li>
+  <li ngbNavItem>
+    <a routerLink="/secondpage" routerLinkActive="active" ngbNavLink>Second</a>
+  </li>
+</ul>

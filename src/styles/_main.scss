@@ -1,10 +1,39 @@
 //placeholders
 
-%container {
-  text-align: center;
+%content {
+  background-color: $bg;
+  min-height: 100vh;
+}
+
+%nav {
+  margin-bottom: 50px;
+  background-color: $poke-blue;
+  li {
+    width: 50%;
+    a {
+      display: block;
+      text-align: center;
+      color: $font-color;
+      font-weight: 600;
+      &:hover {
+        color: $poke-blue;
+        background-color: $poke-yellow;
+      }
+    }
+    &:first-of-type {
+      a {
+        border-right: 1px solid #fff;
+      }
+    }
+  }
+}
+
+%center-content {
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  min-height: 35vh;
 }
 
 %input {
@@ -19,7 +48,7 @@
 
 %button {
   border: 1px solid $poke-blue;
-  padding: 7px 15px;
+  padding: 9px 15px;
   color: #fff;
   font-size: 15px;
   background-color: $poke-blue;
@@ -30,26 +59,31 @@
     color: $poke-yellow;
   }
 }
-
-//styles
 * {
   font-family: $main-font !important;
   color: $font-color;
 }
 
 body {
-  padding: 20px;
+  .nav {
+    @extend %nav;
+  }
+  .content {
+    @extend %content;
+  }
+  .center-content {
+    @extend %center-content;
+  }
   h1,
   h2,
-  h3,
-  h4 {
+  h3 {
     font-family: $heading-font !important;
     text-align: center;
   }
   color: $font-color;
   background-color: $bg;
   .searchbar {
-    @extend %container;
+    @extend %center-content;
     input {
       @extend %input;
     }

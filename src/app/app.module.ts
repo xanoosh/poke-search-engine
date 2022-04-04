@@ -9,7 +9,6 @@ import { ButtonComponent } from './components/button/button.component';
 import { TextinputComponent } from './components/textinput/textinput.component';
 import { SecondpageComponent } from './components/secondpage/secondpage.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TextinputComponent,
     SecondpageComponent,
     NavigationComponent,
-    HomepageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
