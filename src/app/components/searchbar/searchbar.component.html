@@ -2,6 +2,10 @@
   <app-header pxSize="35px" title="choose your pokemon"></app-header>
   <div class="searchbar">
     <app-textinput></app-textinput>
-    <app-button (btnClick)="searchBarClick()"></app-button>
+    <app-button (btnClick)="getPokemonData()"></app-button>
+
+    <div>
+      {{ data | json }}
+    </div>
   </div>
 </div>
