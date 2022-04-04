@@ -59,18 +59,14 @@
   }
 }
 %table {
-  text-align: left;
   display: inline-block;
   th,
   td {
     padding: 2px 5px;
   }
+  margin-bottom: 20px;
 }
 %pokemon-data {
-  h2 {
-    text-align: left;
-  }
-  text-align: left;
 }
 
 //styles

@@ -6,21 +6,23 @@
   </div>
 
   <div *ngIf="pokeData" class="pokemon-data">
-    <app-header pxSize="25px" title="name: {{ pokeData.name }}"></app-header>
+    <app-header pxSize="25px" title="{{ pokeData.name }}"></app-header>
     <img
       src="{{ pokeData?.sprites?.front_default }}"
       alt="{{ pokeData.name }} image"
     />
-    <app-header pxSize="15px" title="base stats:"></app-header>
-    <div class="row">
-      <div class="col-md-6">
-        <table>
-          <tr *ngFor="let stat of pokeData.stats">
-            <th>{{ stat.stat.name }}</th>
-            <td>{{ stat.base_stat }}</td>
-          </tr>
-        </table>
-      </div>
+    <app-header pxSize="20px" title="base stats:"></app-header>
+    <table>
+      <tr *ngFor="let el of pokeData.stats">
+        <th>{{ el.stat.name }}</th>
+        <td>{{ el.base_stat }}</td>
+      </tr>
+    </table>
+    <app-header pxSize="20px" title="effort values:"></app-header>
+    <div *ngFor="let el of pokeData.stats">
+      <p *ngIf="el.effort > 0">
+        <strong>{{ el.stat.name }}: {{ el.effort }}</strong>
+      </p>
     </div>
   </div>
 </div>
