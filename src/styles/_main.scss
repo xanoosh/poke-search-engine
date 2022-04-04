@@ -13,16 +13,14 @@
     a {
       display: block;
       text-align: center;
-      color: $font-color;
-      font-weight: 600;
-      &:hover {
+      font-family: $heading-font !important;
+      color: $poke-yellow;
+      padding: 15px;
+      &:hover,
+      &:focus,
+      &.active {
         color: $poke-blue;
         background-color: $poke-yellow;
-      }
-    }
-    &:first-of-type {
-      a {
-        border-right: 1px solid #fff;
       }
     }
   }
@@ -33,7 +31,6 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  min-height: 35vh;
 }
 
 %input {
@@ -47,18 +44,23 @@
 }
 
 %button {
+  font-family: $heading-font !important;
   border: 1px solid $poke-blue;
   padding: 9px 15px;
-  color: #fff;
+  color: $poke-yellow;
   font-size: 15px;
   background-color: $poke-blue;
   display: inline-block;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    color: $poke-yellow;
+    color: $poke-blue;
+    background-color: $poke-yellow;
   }
 }
+
+//styles
+
 * {
   font-family: $main-font !important;
   color: $font-color;
