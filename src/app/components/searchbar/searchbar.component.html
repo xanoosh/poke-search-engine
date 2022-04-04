@@ -5,7 +5,22 @@
     <app-button (btnClick)="getApiData()"></app-button>
   </div>
 
-  <div *ngIf="data | async">
-    {{ data | async | json }}
+  <div *ngIf="pokeData" class="pokemon-data">
+    <app-header pxSize="25px" title="name: {{ pokeData.name }}"></app-header>
+    <img
+      src="{{ pokeData?.sprites?.front_default }}"
+      alt="{{ pokeData.name }} image"
+    />
+    <app-header pxSize="15px" title="base stats:"></app-header>
+    <div class="row">
+      <div class="col-md-6">
+        <table>
+          <tr *ngFor="let stat of pokeData.stats">
+            <th>{{ stat.stat.name }}</th>
+            <td>{{ stat.base_stat }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
