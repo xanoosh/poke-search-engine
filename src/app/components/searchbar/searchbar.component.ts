@@ -1,23 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+interface GlobalDataState {
+  searchValue: string;
+}
 @Component({
   selector: 'app-searchbar',
   templateUrl: './searchbar.component.html',
   styleUrls: ['./searchbar.component.scss'],
 })
 export class SearchbarComponent implements OnInit {
-  searchBarValue: string = '';
+  searchBarValue$: Observable<string>;
   pokeData: any;
-  searchBarChange: (val: any) => void = (val) => {
-    this.searchBarValue = val;
-    console.log(this.searchBarValue);
-  };
-  searchBarClick: () => void = () => console.log('clicked');
-  constructor(private http: HttpClient) {}
-  getApiData() {
-    this.http.get(`https://pokeapi.co/api/v2/pokemon/1`).subscribe((res) => {
-      this.pokeData = res;
-    });
+  searchBarValue: string = '';
+  constructor(private store: Store<GlobalDataState>, private http: HttpClient) {
+    this.searchBarValue$ = this.store.select('searchValue');
   }
-  ngOnInit(): void {}
+
+  getApiData() {
+    this.http
+      .get(`https://pokeapi.co/api/v2/pokemon/${this.searchBarValue}`)
+      .subscribe((res) => {
+        this.pokeData = res;
+      });
+  }
+  ngOnInit(): void {
+    this.store
+      .select('searchValue')
+      .subscribe((searchBarValue) => (this.searchBarValue = searchBarValue));
+  }
 }

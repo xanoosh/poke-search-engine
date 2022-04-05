@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { simpleReducer } from './simple.reducer';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +24,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SecondpageComponent,
     NavigationComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgbModule,
+    StoreModule.forRoot({ searchValue: simpleReducer }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

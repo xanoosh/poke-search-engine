@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+interface GlobalDataState {
+  searchValue: string;
+}
+
 @Component({
   selector: 'app-textinput',
   templateUrl: './textinput.component.html',
@@ -8,11 +15,11 @@ import { Component, OnInit } from '@angular/core';
 export class TextinputComponent implements OnInit {
   placeholder: string = 'Search by name or id';
 
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {}
 
   onChange(val: string) {
-    console.log(val);
+    this.store.dispatch({ type: val });
   }
 }
