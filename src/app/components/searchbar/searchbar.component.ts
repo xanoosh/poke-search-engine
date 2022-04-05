@@ -23,9 +23,15 @@ export class SearchbarComponent implements OnInit {
   getApiData() {
     this.http
       .get(`https://pokeapi.co/api/v2/pokemon/${this.searchBarValue}`)
-      .subscribe((res) => {
-        this.pokeData = res;
-      });
+      .subscribe(
+        (res) => {
+          console.log(res);
+          this.pokeData = res;
+        },
+        (err) => {
+          console.log(`Error code ${err.status}, didn't fetch resources`);
+        }
+      );
   }
   ngOnInit(): void {
     this.store
