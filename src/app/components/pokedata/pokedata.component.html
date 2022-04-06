@@ -1,7 +1,7 @@
-<div *ngIf="pokeData" class="pokemon-data">
+<div class="pokemon-data">
   <app-header pxSize="25px" title="{{ pokeData.name }}"></app-header>
   <img
-    src="{{ pokeData?.sprites?.front_default }}"
+    src="{{ pokeData.sprites.front_default }}"
     alt="{{ pokeData.name }} image"
   />
   <app-header pxSize="20px" title="base stats:"></app-header>
@@ -13,7 +13,7 @@
   </table>
   <app-header pxSize="20px" title="effort values:"></app-header>
   <div *ngFor="let el of pokeData.stats">
-    <p *ngIf="el.effort > 0">
+    <p *ngIf="el.effort !== 0">
       <strong>{{ el.stat.name }}: {{ el.effort }}</strong>
     </p>
   </div>

@@ -6,7 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./pokedata.component.scss'],
 })
 export class PokedataComponent implements OnInit {
-  @Input() pokeData: any = { name: '', sprites: [], stats: [] };
+  @Input() pokeData: any = '';
+  // @Input() sprite: string = '';
+  // @Input() stats: Object[] = [];
+
   constructor() {}
 
   ngOnInit(): void {}

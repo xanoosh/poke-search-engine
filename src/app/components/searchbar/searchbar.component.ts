@@ -11,7 +11,8 @@ import { GlobalDataState } from '../../interfaces';
 })
 export class SearchbarComponent implements OnInit {
   searchBarValue$: Observable<string>;
-  pokeData: any = { name: '', sprites: [], stats: [] };
+  pokeDataResult: any;
+  errorMessage: string = '';
   searchBarValue: string = '';
   constructor(private store: Store<GlobalDataState>, private http: HttpClient) {
     this.searchBarValue$ = this.store.select('searchValue');
@@ -23,11 +24,12 @@ export class SearchbarComponent implements OnInit {
       .get(`https://pokeapi.co/api/v2/pokemon/${this.searchBarValue}`)
       .subscribe(
         (res) => {
-          this.pokeData = res;
+          this.pokeDataResult = res;
         },
         (err) => {
           if (err.status === 404) {
             //ask for correct name/id
+            this.errorMessage = `typo in ${this.searchBarValue} try retyping`;
           } else {
             // main err message (sth went wrong etc)
           }

@@ -4,5 +4,12 @@
     <app-textinput></app-textinput>
     <app-button text="search"></app-button>
   </form>
-  <!-- <app-pokedata pokeData="{{ pokeData }}"></app-pokedata> -->
+  <app-pokedata
+    *ngIf="pokeDataResult && !errorMessage"
+    [pokeData]="pokeDataResult"
+  >
+  </app-pokedata>
+  <div *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </div>
 </div>
