@@ -9,7 +9,5 @@
     [pokeData]="pokeDataResult"
   >
   </app-pokedata>
-  <div *ngIf="errorMessage">
-    <p>{{ errorMessage }}</p>
-  </div>
+  <app-errormessage [errorMessage]="errorMessage"></app-errormessage>
 </div>

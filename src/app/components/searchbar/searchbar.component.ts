@@ -20,6 +20,7 @@ export class SearchbarComponent implements OnInit {
 
   getApiData(e?: Event) {
     if (e) e.preventDefault();
+    this.errorMessage = '';
     this.http
       .get(`https://pokeapi.co/api/v2/pokemon/${this.searchBarValue}`)
       .subscribe(
@@ -31,6 +32,7 @@ export class SearchbarComponent implements OnInit {
             //ask for correct name/id
             this.errorMessage = `typo in ${this.searchBarValue} try retyping`;
           } else {
+            this.errorMessage = `something went wrong. try again later`;
             // main err message (sth went wrong etc)
           }
         }

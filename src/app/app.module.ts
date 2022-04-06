@@ -14,6 +14,7 @@ import { SecondpageComponent } from './components/secondpage/secondpage.componen
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PokedataComponent } from './components/pokedata/pokedata.component';
+import { ErrormessageComponent } from './errormessage/errormessage.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PokedataComponent } from './components/pokedata/pokedata.component';
     SecondpageComponent,
     NavigationComponent,
     PokedataComponent,
+    ErrormessageComponent,
   ],
   imports: [
     BrowserModule,
