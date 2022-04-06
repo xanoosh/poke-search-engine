@@ -20,16 +20,20 @@ export class SearchbarComponent implements OnInit {
     this.searchBarValue$ = this.store.select('searchValue');
   }
 
-  getApiData() {
+  getApiData(e?: Event) {
+    if (e) e.preventDefault();
     this.http
       .get(`https://pokeapi.co/api/v2/pokemon/${this.searchBarValue}`)
       .subscribe(
         (res) => {
-          console.log(res);
           this.pokeData = res;
         },
         (err) => {
-          console.log(`Error code ${err.status}, didn't fetch resources`);
+          if (err.status === 404) {
+            //ask for correct name/id
+          } else {
+            // main err message (sth went wrong etc)
+          }
         }
       );
   }
