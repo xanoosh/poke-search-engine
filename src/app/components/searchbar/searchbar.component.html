@@ -4,25 +4,5 @@
     <app-textinput></app-textinput>
     <app-button text="search"></app-button>
   </form>
-
-  <div *ngIf="pokeData" class="pokemon-data">
-    <app-header pxSize="25px" title="{{ pokeData.name }}"></app-header>
-    <img
-      src="{{ pokeData?.sprites?.front_default }}"
-      alt="{{ pokeData.name }} image"
-    />
-    <app-header pxSize="20px" title="base stats:"></app-header>
-    <table>
-      <tr *ngFor="let el of pokeData.stats">
-        <th>{{ el.stat.name }}</th>
-        <td>{{ el.base_stat }}</td>
-      </tr>
-    </table>
-    <app-header pxSize="20px" title="effort values:"></app-header>
-    <div *ngFor="let el of pokeData.stats">
-      <p *ngIf="el.effort > 0">
-        <strong>{{ el.stat.name }}: {{ el.effort }}</strong>
-      </p>
-    </div>
-  </div>
+  <!-- <app-pokedata pokeData="{{ pokeData }}"></app-pokedata> -->
 </div>

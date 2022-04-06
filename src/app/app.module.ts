@@ -13,6 +13,7 @@ import { TextinputComponent } from './components/textinput/textinput.component';
 import { SecondpageComponent } from './components/secondpage/secondpage.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PokedataComponent } from './components/pokedata/pokedata.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     TextinputComponent,
     SecondpageComponent,
     NavigationComponent,
+    PokedataComponent,
   ],
   imports: [
     BrowserModule,

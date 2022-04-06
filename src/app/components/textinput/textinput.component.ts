@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-
-interface GlobalDataState {
-  searchValue: string;
-}
+import { GlobalDataState } from '../../interfaces';
 
 @Component({
   selector: 'app-textinput',
@@ -15,7 +10,7 @@ interface GlobalDataState {
 export class TextinputComponent implements OnInit {
   placeholder: string = 'Search by name or id';
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<GlobalDataState>) {}
 
   ngOnInit(): void {}
 
