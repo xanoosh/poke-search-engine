@@ -69,6 +69,11 @@
 }
 %pokemon-data {
 }
+%errorMessage {
+  p {
+    color: red;
+  }
+}
 
 //styles
 
@@ -106,6 +111,9 @@ body {
   }
   .pokemon-data {
     @extend %pokemon-data;
+  }
+  .errorMessage {
+    @extend %errorMessage;
   }
   table {
     @extend %table;
