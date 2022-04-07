@@ -14,8 +14,9 @@
       display: block;
       text-align: center;
       font-family: $heading-font !important;
+      font-size: 20px;
       color: $poke-yellow;
-      padding: 15px;
+      padding: 20px 15px;
       &:hover,
       &:focus,
       &.active {
@@ -23,6 +24,23 @@
         background-color: $poke-yellow;
       }
     }
+  }
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+
+    li {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+%heading-styles {
+  font-family: $heading-font !important;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 20px !important;
   }
 }
 
@@ -41,6 +59,12 @@
   font-family: font;
   margin: 30px 0;
   border: 1px solid $poke-blue;
+  width: 300px;
+  @media (max-width: 768px) {
+    width: 220px;
+    padding: 7px;
+    margin: 20px 0;
+  }
 }
 
 %button {
@@ -66,6 +90,13 @@
     padding: 2px 5px;
   }
   margin-bottom: 20px;
+  @media (max-width: 768px) {
+    th,
+    td {
+      padding: 0 5px;
+    }
+    margin-bottom: 10px;
+  }
 }
 
 %errorMessage {
@@ -94,11 +125,9 @@ body {
   h1,
   h2,
   h3 {
-    font-family: $heading-font !important;
-    text-align: center;
+    @extend %heading-styles;
   }
-  color: $font-color;
-  background-color: $bg;
+
   .searchbar {
     @extend %center-content;
     input {
