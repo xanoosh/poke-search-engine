@@ -67,8 +67,7 @@
   }
   margin-bottom: 20px;
 }
-%pokemon-data {
-}
+
 %errorMessage {
   p {
     color: red;
@@ -109,9 +108,7 @@ body {
   button {
     @extend %button;
   }
-  .pokemon-data {
-    @extend %pokemon-data;
-  }
+
   .errorMessage {
     @extend %errorMessage;
   }

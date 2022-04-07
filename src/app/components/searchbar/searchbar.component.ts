@@ -29,11 +29,9 @@ export class SearchbarComponent implements OnInit {
         },
         (err) => {
           if (err.status === 404) {
-            //ask for correct name/id
-            this.errorMessage = `possible typo. try retyping name or enter value between 1 and 898`;
+            this.errorMessage = `possible typo. try retyping name or enter a number between 1 and 898`;
           } else {
             this.errorMessage = `something went wrong. try again later`;
-            // main err message (sth went wrong etc)
           }
         }
       );
